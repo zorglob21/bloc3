@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS  + Js -->
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'appli/style.css' %}" type="text/css">
+    <title>Catalogue</title>
+  </head>
+  <body id="catalogue">
+    <div class="container">
+      <div class="row">
+        <div class="column filtres">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label" for="flexCheckDefault">
+              chappellerie
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value=""  >
+            <label class="form-check-label" for="flexCheckChecked">
+              pulls
+            </label>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value=""  >
+            <label class="form-check-label" for="flexCheckChecked">
+            t-shirts
+            </label>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value=""  >
+            <label class="form-check-label" for="flexCheckChecked">
+            pantalons
+            </label>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value=""  >
+            <label class="form-check-label" for="flexCheckChecked">
+            chaussures
+            </label>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value=""  >
+            <label class="form-check-label" for="flexCheckChecked">
+            accessoires
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" >
+            <label class="form-check-label" for="flexCheckChecked">
+            sous-vêtements
+            </label>
+          </div>
+        </div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+      <div class="filtres">
+
+      </div>
+    </div>
+
+
+  </body>
+</html>

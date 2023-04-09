@@ -1,0 +1,42 @@
+#homepageWallPaper {
+
+  background:url(images/woman-g6da015e6d_1920.jpg) no-repeat center center fixed;
+}
+
+@font-face {
+  font-family: "italianno";
+  src: url(fonts/Italianno-Regular.ttf);
+}
+
+.nav-button{
+  background-color: #f4e9e9da;
+  font-family:"italianno",'Helvetica Neue', sans-serif;
+  font-style: bold;
+  color:black;
+  font-size: 45px;
+  border-radius: 15px;
+  width:150px;
+}
+
+
+.mercadona{
+
+font-family:"italianno",'Helvetica Neue', sans-serif;
+font-size: 130px;
+color:rgb(255, 255, 255);
+text-shadow: 2px 2px 5px black;
+
+}
+
+#catalogue{
+  background-color: #DCC4C4;
+}
+/*html { 
+  background: url(images/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+background-color: blueviolet;
+

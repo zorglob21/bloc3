@@ -10,3 +10,8 @@ def homepage(request):
     template = loader.get_template('appli/homepage.html')
     context = {}
     return HttpResponse(template.render(context,request))
+
+def catalogue(request):
+    template = loader.get_template('appli/catalogue.html')
+    context = {}
+    return HttpResponse(template.render(context,request))
