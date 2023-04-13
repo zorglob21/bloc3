@@ -1158,6 +1158,14 @@ ol {
 	color: #ca1515;
 }
 
+.product_item_img{
+	width: 100%;
+	height: 360px;
+	object-fit:cover;
+	object-position:center;
+	display:block;
+}
+
 .product__item__pic {
 	height: 360px;
 	position: relative;
@@ -1513,9 +1521,14 @@ ol {
 	font-size: 18px;
 }
 
+ .size__list ul{
+	list-style-type: none;
+
+}
+
 .sidebar__sizes .size__list label,
 .sidebar__color .size__list label {
-	display: block;
+	display: inline;
 	padding-left: 20px;
 	font-size: 14px;
 	text-transform: uppercase;
