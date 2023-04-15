@@ -197,7 +197,7 @@
                     <div class="card">
                       <div class="card-heading active">
                         <a data-toggle="collapse" data-target="#collapseOne"
-                          >Women</a
+                          >Catégories</a
                         >
                       </div>
                       <div
@@ -207,108 +207,50 @@
                       >
                         <div class="card-body">
                           <ul>
-                            <li><a href="#">Coats</a></li>
-                            <li><a href="#">Jackets</a></li>
-                            <li><a href="#">Dresses</a></li>
-                            <li><a href="#">Shirts</a></li>
-                            <li><a href="#">T-shirts</a></li>
-                            <li><a href="#">Jeans</a></li>
+                            {% if categorie_list %} {% for categorie in categorie_list%}
+                            <li>                      <input
+                              type="checkbox"
+                              class="filter-checkbox"
+                              id="{{ categorie.title }}"
+                              data-filter="categorie_list"
+                              value="{{ categorie.title }}"
+                            />
+                            <label for="{{ categorie.title }}">{{ categorie.title }}</label></li>
+                            {% endfor %}
+                            {% endif %}
+
                           </ul>
                         </div>
                       </div>
                     </div>
                     <div class="card">
-                      <div class="card-heading">
-                        <a data-toggle="collapse" data-target="#collapseTwo"
-                          >Men</a
-                        >
-                      </div>
-                      <div
-                        id="collapseTwo"
-                        class="collapse"
-                        data-parent="#accordionExample"
+                    <div class="card-heading active">
+                      <a data-toggle="collapse" data-target="#collapseOne"
+                        >Genre</a
                       >
-                        <div class="card-body">
-                          <ul>
-                            <li><a href="#">Coats</a></li>
-                            <li><a href="#">Jackets</a></li>
-                            <li><a href="#">Dresses</a></li>
-                            <li><a href="#">Shirts</a></li>
-                            <li><a href="#">T-shirts</a></li>
-                            <li><a href="#">Jeans</a></li>
-                          </ul>
-                        </div>
+                    </div>
+                    <div
+                      id="collapseOne"
+                      class="collapse show"
+                      data-parent="#accordionExample"
+                    >
+                      <div class="card-body">
+                        <ul>
+                          {% if gender_list %} {% for gender in gender_list %}
+                          <li>                      <input
+                            type="checkbox"
+                            class="filter-checkbox"
+                            id="{{ gender.title }}"
+                            data-filter="gender_list"
+                            value="{{ gender.title }}"
+                          />
+                          <label for="{{ gender.title }}">{{ gender.title }}</label></li>
+                          {% endfor %}
+                          {% endif %}
+                        </ul>
                       </div>
                     </div>
-                    <div class="card">
-                      <div class="card-heading">
-                        <a data-toggle="collapse" data-target="#collapseThree"
-                          >Kids</a
-                        >
-                      </div>
-                      <div
-                        id="collapseThree"
-                        class="collapse"
-                        data-parent="#accordionExample"
-                      >
-                        <div class="card-body">
-                          <ul>
-                            <li><a href="#">Coats</a></li>
-                            <li><a href="#">Jackets</a></li>
-                            <li><a href="#">Dresses</a></li>
-                            <li><a href="#">Shirts</a></li>
-                            <li><a href="#">T-shirts</a></li>
-                            <li><a href="#">Jeans</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card">
-                      <div class="card-heading">
-                        <a data-toggle="collapse" data-target="#collapseFour"
-                          >Accessories</a
-                        >
-                      </div>
-                      <div
-                        id="collapseFour"
-                        class="collapse"
-                        data-parent="#accordionExample"
-                      >
-                        <div class="card-body">
-                          <ul>
-                            <li><a href="#">Coats</a></li>
-                            <li><a href="#">Jackets</a></li>
-                            <li><a href="#">Dresses</a></li>
-                            <li><a href="#">Shirts</a></li>
-                            <li><a href="#">T-shirts</a></li>
-                            <li><a href="#">Jeans</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card">
-                      <div class="card-heading">
-                        <a data-toggle="collapse" data-target="#collapseFive"
-                          >Cosmetic</a
-                        >
-                      </div>
-                      <div
-                        id="collapseFive"
-                        class="collapse"
-                        data-parent="#accordionExample"
-                      >
-                        <div class="card-body">
-                          <ul>
-                            <li><a href="#">Coats</a></li>
-                            <li><a href="#">Jackets</a></li>
-                            <li><a href="#">Dresses</a></li>
-                            <li><a href="#">Shirts</a></li>
-                            <li><a href="#">T-shirts</a></li>
-                            <li><a href="#">Jeans</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
+                  </div>
                   </div>
                 </div>
               </div>
@@ -321,7 +263,7 @@
 
                       <li class="list-group-item">
                         <label for="customRange2" class="form-label">Prix</label>
-                        <input type="range" class="form-range" min="{{minMaxPrice.product_price__min}}"  max="{{minMaxPrice.product_price__max}}" id="rangeInput" oninput="maxPrice.value=this.value">
+                        <input type="range" class="form-range w-100" min="{{minMaxPrice.product_price__min}}"  max="{{minMaxPrice.product_price__max}}" id="rangeInput" oninput="maxPrice.value=this.value">
                         
                       </li>
                       <li class="list-group-item">
