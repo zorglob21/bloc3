@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils.html import mark_safe
 # Create your models here.
 
 #class Admin(models.Model):
@@ -10,6 +10,8 @@ from django.db import models
 
 class Category(models.Model):
     title = models.CharField(max_length=100)
+    class Meta:
+        verbose_name_plural='Categories'
 
     def __str__(self):
         return self.title
@@ -56,4 +58,8 @@ class Product(models.Model):
     product_promotion_end_date=models.DateField(blank=True,null=True)
     product_picture=models.ImageField(upload_to='images/')
 
+    def __str__(self):
+        return self.product_name
 
+    def image_tag(self):
+        return mark_safe('<img src="%s" width="50" height="50"/>'%(self.product_picture.url))
