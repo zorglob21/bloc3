@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.html import mark_safe
+from datetime import date
 # Create your models here.
 
 #class Admin(models.Model):
@@ -63,3 +64,19 @@ class Product(models.Model):
 
     def image_tag(self):
         return mark_safe('<img src="%s" width="50" height="50"/>'%(self.product_picture.url))
+    
+    def is_discount(self):
+        "returns if the item is on promotion and the promotion price"
+        today = date.today()
+        if self.product_promotion_start_date < today and self.product_promotion_end_date > today:
+            return True
+        else:
+            return False
+    
+    
+    
+    @property
+    def promotion_price(self):
+        discounted_price = self.product_price - self.product_price*self.product_promotion_percentage/100
+        return discounted_price
+        

@@ -1,11 +1,55 @@
 {% if data %} {% for product in data %}
+              {% if product.product_promotion_start_date and product.product_promotion_end_date and product.is_discount %}
               <div class="col-lg-4 col-md-6">
+                
+                <div class="product__item">
+                  <div
+                    class="product__item__pic set-bg"
+                  >
+                  <div class="label promo">Promo</div>
+                  <img src="{{ product.product_picture.url }}" class="product_item_img">
+                  
+                    <ul class="product__hover">
+                      <li>
+                        <a
+                          href="{{ product.product_picture.url }}"
+                          class="image-popup"
+                          ><span class="arrow_expand"></span
+                        ></a>
+                      </li>
+                      <li>
+                        <a href="#"><span class="icon_heart_alt"></span></a>
+                      </li>
+                      <li>
+                        <a href="#"><span class="icon_bag_alt"></span></a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="product__item__text">
+                    <h6><a href="#">{{product.product_name}}</a></h6>
+                    <div class="rating">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                    </div>
+                    <div class="product__price_discounted">
+                      {{product.promotion_price|floatformat:2}} €
+                    </div>
+
+                  </div>
+                </div>                
+                </div>
+           
+                {% else %}
+                <div class="col-lg-4 col-md-6">
                 <div class="product__item">
                   <div
                     class="product__item__pic set-bg"
                   >
                   <img src="{{ product.product_picture.url }}" class="product_item_img">
-                 
+                  
                     <ul class="product__hover">
                       <li>
                         <a
@@ -34,11 +78,11 @@
                     <div class="product__price">
                       {{product.product_price}} €
                     </div>
+
                   </div>
                 </div>
-            
-              </div>
               
-              {% endfor %} 
-              {% include "appli/pagination.html" with page=posts %}
-              {% endif %}
+              </div>
+              {% endif %} {% endfor %} {% endif %}
+
+ 

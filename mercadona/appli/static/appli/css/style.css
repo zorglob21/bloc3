@@ -1188,6 +1188,10 @@ ol {
 	background: #36a300;
 }
 
+.product__item__pic .label.promo {
+	background: #ce2626ee;
+}
+
 .product__item__pic .label.stockout {
 	background: #111111;
 }
@@ -1300,7 +1304,11 @@ ol {
 .product__item__text .rating i:last-child {
 	margin-right: 0;
 }
-
+.product__price_discounted{
+	color:#e92d2df6;
+	font-weight: bold;
+	font-size: 1.3rem
+}
 .product__item__text .product__price {
 	color: #111111;
 	font-weight: 600;
