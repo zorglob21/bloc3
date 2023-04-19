@@ -13,6 +13,8 @@ admin.site.register(SizeShoe)
 admin.site.register(SizePant)
 
 
+
 class ProductAdmin(admin.ModelAdmin):
     list_display=('product_name','product_price','product_category','product_gender','image_tag')
+    search_fields=('product_name__startswith',)
 admin.site.register(Product, ProductAdmin)

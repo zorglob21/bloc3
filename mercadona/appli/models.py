@@ -54,7 +54,7 @@ class Product(models.Model):
     product_size_shoes = models.ManyToManyField(SizeShoe, blank=True)
     product_description = models.TextField(blank=True)
     product_promotion_percentage=models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
-    product_promotion_price=models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    #product_promotion_price=models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
     product_promotion_start_date=models.DateField(blank=True,null=True)
     product_promotion_end_date=models.DateField(blank=True,null=True)
     product_picture=models.ImageField(upload_to='images/')
@@ -64,6 +64,10 @@ class Product(models.Model):
 
     def image_tag(self):
         return mark_safe('<img src="%s" width="50" height="50"/>'%(self.product_picture.url))
+    
+    #def discount_link(self, obj):
+        #url = "admin:%(appli)s_%(model)s_%(page)"
+        #return format_html('<a href="{}">{}xxx</a>')
     
     def is_discount(self):
         "returns if the item is on promotion and the promotion price"
