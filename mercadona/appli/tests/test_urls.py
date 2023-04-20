@@ -23,4 +23,4 @@ class TestUrls(SimpleTestCase):
     
     def test_empty_url_is_resolved(self):
         url= reverse('empty')
-        self.assertEquals(resolve(url).func, views.indexgit )
+        self.assertEquals(resolve(url).func, views.index )

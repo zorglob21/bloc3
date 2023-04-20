@@ -36,8 +36,8 @@ def filter_data(request):
     categorie_list=request.GET.getlist('categorie_list[]')
     gender_list=request.GET.getlist('gender_list[]')
 
-    maxPrice=request.GET['maxPrice']
-    
+    maxPrice=request.GET.get('maxPrice', '0.00')
+    #maxPrice=request.GET['maxPrice']
     allProducts=Product.objects.all().order_by('-id').distinct()
 
     allProducts=allProducts.filter(product_price__lte=maxPrice)

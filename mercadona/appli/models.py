@@ -1,12 +1,7 @@
 from django.db import models
 from django.utils.html import mark_safe
 from datetime import date
-# Create your models here.
-
-#class Admin(models.Model):
-   #admin_pseudo = models.CharField(max_length=50)
-   #admin_password = models.CharField(max_length=250)
-#ajuster le max length à la longueur du hash
+from decimal import Decimal
 
 
 class Category(models.Model):
@@ -65,9 +60,6 @@ class Product(models.Model):
     def image_tag(self):
         return mark_safe('<img src="%s" width="50" height="50"/>'%(self.product_picture.url))
     
-    #def discount_link(self, obj):
-        #url = "admin:%(appli)s_%(model)s_%(page)"
-        #return format_html('<a href="{}">{}xxx</a>')
     
     def is_discount(self):
         "returns if the item is on promotion and the promotion price"
@@ -81,6 +73,6 @@ class Product(models.Model):
     
     @property
     def promotion_price(self):
-        discounted_price = self.product_price - self.product_price*self.product_promotion_percentage/100
+        discounted_price = self.product_price - self.product_price* (Decimal(str(self.product_promotion_percentage))/100)
         return discounted_price
         
