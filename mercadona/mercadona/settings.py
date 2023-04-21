@@ -11,6 +11,13 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
+import environ
+import os
+
+
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,10 +28,10 @@ MEDIA_ROOT = BASE_DIR / "media"
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-_pb_z=pgo_m+4u*77&re0_*!0q-d@-b^^m(t514jbfs@**2eak'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 #SECURE_SSL_REDIRECT= True
@@ -41,7 +48,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap5',
     
+    
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -77,7 +87,7 @@ WSGI_APPLICATION = 'mercadona.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -88,7 +98,10 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
+'''
+DATABASES = {
+    'default':dj_database_url.parse(env('DATABASE_URL'))
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

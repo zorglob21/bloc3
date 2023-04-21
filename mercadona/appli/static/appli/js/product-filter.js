@@ -22,11 +22,12 @@ $(document).ready(function(){
     dataType: 'json',
     beforeSend:function(){
       $("#filteredProducts").html('Loading...');
+     
     },
     success:function(res){
       console.log(res);
       $("#filteredProducts").html(res.data);
-    //  $(".ajaxLoader").hide();
+   
     }
   });
 });
