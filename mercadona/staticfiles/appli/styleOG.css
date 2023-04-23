@@ -1,0 +1,119 @@
+#homepageWallPaper {
+
+  background:url(images/woman-g6da015e6d_1920.jpg) no-repeat center center fixed;
+}
+
+@font-face {
+  font-family: "italianno";
+  src: url(fonts/Italianno-Regular.ttf);
+}
+
+.nav-button{
+  background-color: #f4e9e9da;
+  font-family:"italianno",'Helvetica Neue', sans-serif;
+  font-style: bold;
+  color:black;
+  font-size: 45px;
+  border-radius: 15px;
+  width:150px;
+}
+
+
+.mercadona{
+
+font-family:"italianno",'Helvetica Neue', sans-serif;
+font-size: 130px;
+color:rgb(255, 255, 255);
+text-shadow: 2px 2px 5px black;
+
+}
+
+#catalogue{
+  background-color: #DCC4C4;
+}
+
+legend{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.filtres{
+  background-color: #468ee0;
+  font-size: 14px;
+  margin-top: 2%;
+  margin-left: -2%;
+}
+
+
+th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  empty-cells: hide;
+  padding:8px;
+}
+
+td:empty {
+  visibility: hidden;
+  border: none;
+}
+
+.filtres{
+  width:210px;
+  padding:0;
+}
+.accordion-button{
+background-color:#468ee0;
+margin-bottom:5px;
+
+}
+h2{
+  text-align:center;
+}
+.accordion-item{
+  background-color:#468ee0;
+  border:none;
+}
+
+.accordion-button:not(.collapsed){
+  background-color: #e69214;
+  color:white;
+}
+.slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 50%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #0704aa; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+
+  background: #aa04aa; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+
