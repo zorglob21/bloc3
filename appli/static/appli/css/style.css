@@ -3212,8 +3212,64 @@ ol {
     padding: 0 85px;
   }
 }
+/*large screens*/
+@media only screen and (min-width: 1500px) {
+  .header__menu ul li {
+    margin-right: 20px;
+  }
+  .header {
+    padding: 0 30px;
+  }
 
-@media only screen and (min-width: 1200px) and (max-width: 1599px) {
+  .product__price_discounted {
+    color: #e92d2df6;
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+  a,
+  .sidebar__categories .section-title h4,
+  .header__menu ul li a,
+  .header__right__auth a,
+  .categories__accordion .card-heading a,
+  .categories__accordion .card-heading a,
+  body,
+  .product__item__text h6 a,
+  .sidebar__sizes .size__list label,
+  .sidebar__color .section-title h4,
+  .instagram__text a,
+  .footer__widget h6,
+  .footer__about p,
+  .footer__widget ul li a,
+  .footer__newslatter form input,
+  .sidebar__color .size__list label {
+    font-size: 1.1vw;
+    color: rgb(0, 0, 0);
+  }
+
+  .breadcrumb__links a {
+    font-size: 1.5vw;
+    font-weight: 500;
+    color: #111111;
+    margin-right: 18px;
+    display: inline-block;
+    position: relative;
+  }
+  .col-lg-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 25%;
+    max-width: 33.333333%;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .container {
+    max-width: 2000px;
+  }
+}
+
+/*1200px to 1499px width*/
+
+@media only screen and (min-width: 1200px) and (max-width: 1499px) {
   .header__menu ul li {
     margin-right: 20px;
   }
@@ -3222,7 +3278,7 @@ ol {
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1200px) and (max-width: 1499px) {
   .container {
     max-width: 1170px;
   }
