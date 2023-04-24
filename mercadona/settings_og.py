@@ -21,6 +21,8 @@ import cloudinary.api
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent
 
+# Specify the path to the .env file relative to BASE_DIR
+env_file = BASE_DIR / 'mercadona/.env'
 env = environ.Env()
 environ.Env.read_env()
 
