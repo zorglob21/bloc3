@@ -22,7 +22,8 @@ import cloudinary.api
 BASE_DIR = Path(__file__).resolve().parent
 
 env = environ.Env()
-environ.Env.read_env()
+env_file = os.path.join(BASE_DIR, 'mercadona/.env')
+environ.Env.read_env(env_file)
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
