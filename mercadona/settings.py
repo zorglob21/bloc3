@@ -33,7 +33,7 @@ MEDIA_ROOT = BASE_DIR / "media"
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 WSGI_APPLICATION = 'mercadona.wsgi.application'
 
