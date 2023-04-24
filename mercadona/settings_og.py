@@ -22,8 +22,7 @@ import cloudinary.api
 BASE_DIR = Path(__file__).resolve().parent
 
 env = environ.Env()
-env_file = os.path.join(BASE_DIR, '.env')
-environ.Env.read_env(env_file)
+environ.Env.read_env()
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
@@ -35,13 +34,13 @@ SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = []
+
 WSGI_APPLICATION = 'mercadona.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
+''''''
 if DEBUG == True:
     DATABASES = {
         'default': {
@@ -103,9 +102,10 @@ if DEBUG == True:
         },
     ]
 
+   
 
 elif DEBUG == False:
-
+    
     DATABASES = {
         'default':dj_database_url.parse(env('DATABASE_URL'))
     }
@@ -122,16 +122,16 @@ elif DEBUG == False:
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap5',
+    'cloudinary_storage',
     'cloudinary',
-
-
+    
+    
     ]
-
-    cloudinary.config(
-    cloud_name= env('cloud_name'),
-    api_key= env('api_key'),
-    api_secret = env('api_secret'))
-
+    cloudinary.config = {
+    'CLOUD_NAME': 'dr3sekypo',
+    'API_KEY': '436714365586686',
+    'API_SECRET': 'HkDsyQrFFidfVFZ9TBoFJU-MhTE',
+    }
 
     MIDDLEWARE = [
         'django.middleware.security.SecurityMiddleware',
@@ -143,7 +143,9 @@ elif DEBUG == False:
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
         'whitenoise.middleware.WhiteNoiseMiddleware',
     ]
+
     ROOT_URLCONF = 'mercadona.urls'
+
     TEMPLATES = [
         {
             'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -159,11 +161,13 @@ elif DEBUG == False:
             },
         },
     ]
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
+    STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+ 
+    
 
-# Pssword validation
-# htps://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
+# Password validation
+# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
