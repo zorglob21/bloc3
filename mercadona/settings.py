@@ -125,9 +125,9 @@ elif DEBUG == False:
     ]
 
     cloudinary.config(
-    cloud_name= 'dr3sekypo',
-    api_key= '436714365586686',
-    api_secret = 'HkDsyQrFFidfVFZ9TBoFJU-MhTE')
+    cloud_name= env('cloud_name'),
+    api_key= env('api_key'),
+    api_secret = env('api_secret'))
 
 
     MIDDLEWARE = [
