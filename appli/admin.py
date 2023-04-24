@@ -20,6 +20,7 @@ class ProductAdmin(admin.ModelAdmin):
    
 admin.site.register(Product, ProductAdmin)
 
+#to display sub fields in ordered manner when adding a new entry on Product
 class SizePantAdmin(admin.ModelAdmin):
     ordering=['title']
 

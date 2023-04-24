@@ -4,6 +4,7 @@ from datetime import date
 from appli.models import Category, SizeStandard, SizeShoe, SizePant, Gender, Product
 from django.core.files.uploadedfile import SimpleUploadedFile
 
+
 class ModelTests(TestCase):
 
     def setUp(self):
@@ -65,7 +66,7 @@ class ModelTests(TestCase):
         )
         # test promotion detection method is_discount
         product.product_promotion_start_date = date(2023, 4, 19)
-        product.product_promotion_end_date = date(2023, 4, 21)
+        product.product_promotion_end_date = date(2024, 4, 21)
         product.save()
         self.assertTrue(product.is_discount())
         product.product_promotion_start_date = date(2023, 4, 22)
