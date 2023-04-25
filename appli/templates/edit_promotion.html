@@ -1,0 +1,18 @@
+{% extends 'admin/base.html' %}
+
+{% block content %}
+<h1>Edit promotion values for {{ product.product_name }}</h1>
+<form method="post">
+  {% csrf_token %}
+  <label for="id_product_promotion_percentage">Promotion Percentage:</label>
+  <input type="number" name="product_promotion_percentage" id="id_product_promotion_percentage" step="0.01" value="{{ product.product_promotion_percentage }}" required>
+  <br>
+  <label for="id_product_promotion_start_date">Promotion Start Date:</label>
+  <input type="date" name="product_promotion_start_date" id="id_product_promotion_start_date" value="{{ product.product_promotion_start_date|date:'Y-m-d' }}" required>
+  <br>
+  <label for="id_product_promotion_end_date">Promotion End Date:</label>
+  <input type="date" name="product_promotion_end_date" id="id_product_promotion_end_date" value="{{ product.product_promotion_end_date|date:'Y-m-d' }}" required>
+  <br>
+  <input type="submit" value="Save">
+</form>
+{% endblock %}

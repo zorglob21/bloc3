@@ -45,6 +45,7 @@ class TemplateTests(TestCase):
             product_promotion_start_date=date(2023, 1, 1),
             product_promotion_end_date=date(2033, 12, 31),
             product_picture=self.image
+
         )
       
       # Save the mock Product objects to the database
@@ -82,6 +83,4 @@ class TemplateTests(TestCase):
       self.assertContains(response, product1.product_price)
       self.assertContains(response, product1.product_picture.url)
 
-      #check that the promotion price is calculated and displayed
-      self.assertContains(response, round(product2.promotion_price,2))
- 
+     

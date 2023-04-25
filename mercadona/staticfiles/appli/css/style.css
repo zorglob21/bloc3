@@ -75,7 +75,7 @@ h6 {
 }
 
 p {
-  font-size: 14px;
+  font-size: 18px;
   font-family: "Montserrat", sans-serif;
   color: #666666;
   font-weight: 400;
@@ -433,7 +433,7 @@ ol {
 }
 
 .header__right__auth a {
-  font-size: 12px;
+  font-size: 15px;
   color: #666666;
   position: relative;
   margin-right: 8px;
@@ -890,7 +890,7 @@ ol {
 }
 
 .footer__widget ul li a {
-  font-size: 14px;
+  font-size: 18px;
   color: #666666;
   line-height: 30px;
 }
@@ -1072,6 +1072,8 @@ ol {
 .categories__text h4 {
   color: #111111;
   font-weight: 700;
+  font-family: "Cookie", cursive;
+  font-size: 35px;
 }
 
 .categories__text p {
@@ -1173,7 +1175,7 @@ ol {
 }
 
 .product__item__pic .label {
-  font-size: 12px;
+  font-size: 18px;
   color: #ffffff;
   font-weight: 500;
   display: inline-block;
@@ -1286,7 +1288,7 @@ ol {
 }
 
 .product__item__text h6 a {
-  font-size: 14px;
+  font-size: 1.2rem;
   color: #111111;
 }
 
@@ -1533,11 +1535,10 @@ ol {
   list-style-type: none;
 }
 
-.sidebar__sizes .size__list label,
 .sidebar__color .size__list label {
   display: inline;
   padding-left: 20px;
-  font-size: 14px;
+  font-size: 20px;
   text-transform: uppercase;
   color: #444444;
   position: relative;
@@ -3210,8 +3211,61 @@ ol {
     padding: 0 85px;
   }
 }
+/*large screens*/
+@media only screen and (min-width: 1500px) {
+  .header__menu ul li {
+    margin-right: 20px;
+  }
+  .header {
+    padding: 0 30px;
+  }
 
-@media only screen and (min-width: 1200px) and (max-width: 1599px) {
+  .product__price_discounted {
+    color: #e92d2df6;
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+  a,
+  .sidebar__categories .section-title h4,
+  .header__menu ul li a,
+  .header__right__auth a,
+  .categories__accordion .card-heading a,
+  .categories__accordion .card-heading a,
+  body,
+  .product__item__text h6 a,
+  .sidebar__sizes .size__list label,
+  .sidebar__color .section-title h4,
+  .instagram__text a,
+  .footer__widget h6,
+  .footer__about p,
+  .footer__widget ul li a,
+  .footer__newslatter form input,
+  .sidebar__color .size__list label {
+    font-size: 1.1vw;
+    color: rgb(0, 0, 0);
+  }
+
+  .breadcrumb__links a {
+    font-size: 1.5vw;
+    font-weight: 500;
+    color: #111111;
+    margin-right: 18px;
+    display: inline-block;
+    position: relative;
+  }
+  .col-lg-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 25%;
+    max-width: 33.333333%;
+  }
+  .container {
+    max-width: 2000px;
+  }
+}
+
+/*1200px to 1499px width*/
+
+@media only screen and (min-width: 1200px) and (max-width: 1499px) {
   .header__menu ul li {
     margin-right: 20px;
   }
@@ -3220,9 +3274,9 @@ ol {
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1200px) and (max-width: 1499px) {
   .container {
-    max-width: 1170px;
+    max-width: 1470px;
   }
 }
 

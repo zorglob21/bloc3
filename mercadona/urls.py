@@ -21,11 +21,9 @@ from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
-    path('adminSecret/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('appli/', include('appli.urls')),
 ]
 
-if settings.DEBUG == True:  # new
+if settings.DEBUG:  
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-elif settings.DEBUG == False:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 

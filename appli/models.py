@@ -39,7 +39,8 @@ class Gender(models.Model):
 
     def __str__(self):
         return self.title
-    
+
+#main model for products    
 class Product(models.Model):
     product_name =models.CharField(max_length=70)
     product_price = models.DecimalField(max_digits=10, decimal_places=2)
@@ -52,11 +53,12 @@ class Product(models.Model):
     product_promotion_percentage=models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
     product_promotion_start_date=models.DateField(blank=True,null=True)
     product_promotion_end_date=models.DateField(blank=True,null=True)
-   
-    
+    product_promotion_price=models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    #to upload pictures in dev mode
     if settings.DEBUG == True:
         product_picture=models.ImageField(upload_to='images/')
-    
+
+    #to upload pictures in production mode
     elif settings.DEBUG == False:
         product_picture=CloudinaryField('image')
     

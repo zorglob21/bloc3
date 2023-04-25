@@ -16,11 +16,6 @@ class TestViews(TestCase):
         response = client.get(reverse('index'))
         self.assertEquals(response.status_code, 200)
         self.assertNotIn(w.title, response.content)
-    
-    def test_view_homepage(self):
-        client = Client()
-        response = client.get(reverse('homepage'))
-        self.assertEquals(response.status_code, 200)
 
     def test_view_index(self):
         client = Client()

@@ -33,6 +33,9 @@ MEDIA_ROOT = BASE_DIR / "media"
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
+#By setting DEBUG to FALSE, the settings will be automatically configured for production environment
+#by setting DEBUG to TRUE, the settings will be automatically configured for development environment
 DEBUG = False
 ALLOWED_HOSTS = []
 WSGI_APPLICATION = 'mercadona.wsgi.application'

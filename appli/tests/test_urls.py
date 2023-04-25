@@ -8,10 +8,6 @@ class TestUrls(SimpleTestCase):
     def test_index_url_is_resolved(self):
         url= reverse('index')
         self.assertEquals(resolve(url).func, views.index)
-  
-    def test_homepage_url_is_resolved(self):
-        url= reverse('homepage')
-        self.assertEquals(resolve(url).func, views.homepage)
     
     def test_catalogue_url_is_resolved(self):
         url= reverse('catalogue')

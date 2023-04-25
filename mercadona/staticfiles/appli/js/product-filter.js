@@ -14,7 +14,7 @@ $(document).ready(function(){
 
   });
   console.log(_filterObj);
-  console.log()
+  console.log('test')
   //Run Ajax
   $.ajax({
     url: 'filter-data',
