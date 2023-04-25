@@ -33,7 +33,7 @@ MEDIA_ROOT = BASE_DIR / "media"
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = []
 WSGI_APPLICATION = 'mercadona.wsgi.application'
 
@@ -109,7 +109,7 @@ elif DEBUG == False:
         'default':dj_database_url.parse(env('DATABASE_URL'))
     }
 
-    ALLOWED_HOSTS = ['*']
+    ALLOWED_HOSTS = ['yannn-bloc3.onrender.com']
 
     INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
