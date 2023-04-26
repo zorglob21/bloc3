@@ -118,9 +118,21 @@
               <ul class="text-center">
                 <li><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="{% url 'catalogue' %}">Catalogue</a></li>
-                <li><a href="{% url 'pre_filtered_catalogue' gender='homme' %}">Homme</a></li>
-                <li><a href="{% url 'pre_filtered_catalogue' gender='femme' %}">Femme</a></li>
-                <li><a href="{% url 'pre_filtered_catalogue' gender='enfant' %}">Enfant</a></li>
+                <li>
+                  <a href="{% url 'pre_filtered_catalogue' gender='homme' %}"
+                    >Homme</a
+                  >
+                </li>
+                <li>
+                  <a href="{% url 'pre_filtered_catalogue' gender='femme' %}"
+                    >Femme</a
+                  >
+                </li>
+                <li>
+                  <a href="{% url 'pre_filtered_catalogue' gender='enfant' %}"
+                    >Enfant</a
+                  >
+                </li>
                 <li><a href="./blog.html">Blog</a></li>
                 <li><a href="./contact.html">Contact</a></li>
               </ul>
@@ -196,51 +208,56 @@
                         data-parent="#accordionExample"
                       >
                         <div class="card-body">
-                          <ul style="list-style-type: none !important;">
+                          <ul style="list-style-type: none !important">
                             {% if categorie_list %} {% for categorie in categorie_list%}
-                            <li>                      <input
-                              type="checkbox"
-                              class="filter-checkbox"
-                              id="{{ categorie.title }}"
-                              data-filter="categorie_list"
-                              value="{{ categorie.title }}"
-                            />
-                            <label for="{{ categorie.title }}">{{ categorie.title }}</label></li>
-                            {% endfor %}
-                            {% endif %}
-
+                            <li>
+                              <input
+                                type="checkbox"
+                                class="filter-checkbox"
+                                id="{{ categorie.title }}"
+                                data-filter="categorie_list"
+                                value="{{ categorie.title }}"
+                              />
+                              <label for="{{ categorie.title }}"
+                                >{{ categorie.title }}</label
+                              >
+                            </li>
+                            {% endfor %} {% endif %}
                           </ul>
                         </div>
                       </div>
                     </div>
                     <div class="card">
-                    <div class="card-heading active">
-                      <a data-toggle="collapse" data-target="#collapseOne"
-                        >Genre</a
+                      <div class="card-heading active">
+                        <a data-toggle="collapse" data-target="#collapseOne"
+                          >Genre</a
+                        >
+                      </div>
+                      <div
+                        id="collapseOne"
+                        class="collapse show"
+                        data-parent="#accordionExample"
                       >
-                    </div>
-                    <div
-                      id="collapseOne"
-                      class="collapse show"
-                      data-parent="#accordionExample"
-                    >
-                      <div class="card-body">
-                        <ul>
-                          {% if gender_list %} {% for gender in gender_list %}
-                          <li>                      <input
-                            type="checkbox"
-                            class="filter-checkbox"
-                            id="{{ gender.title }}"
-                            data-filter="gender_list"
-                            value="{{ gender.title }}"
-                          />
-                          <label for="{{ gender.title }}">{{ gender.title }}</label></li>
-                          {% endfor %}
-                          {% endif %}
-                        </ul>
+                        <div class="card-body">
+                          <ul>
+                            {% if gender_list %} {% for gender in gender_list %}
+                            <li>
+                              <input
+                                type="checkbox"
+                                class="filter-checkbox"
+                                id="{{ gender.title }}"
+                                data-filter="gender_list"
+                                value="{{ gender.title }}"
+                              />
+                              <label for="{{ gender.title }}"
+                                >{{ gender.title }}</label
+                              >
+                            </li>
+                            {% endfor %} {% endif %}
+                          </ul>
+                        </div>
                       </div>
                     </div>
-                  </div>
                   </div>
                 </div>
               </div>
@@ -248,17 +265,37 @@
                 <div class="section-title">
                   <h4>FILTRER PAR PRIX</h4>
                   <div class="card mt-3">
-       
                     <div class="list-group list-group-flush">
-
                       <li class="list-group-item">
-                        <label for="customRange2" class="form-label">Prix</label>
-                        <input type="range" class="form-range w-100" min="{{minMaxPrice.product_price__min}}"  max="{{minMaxPrice.product_price__max}}" id="rangeInput" oninput="maxPrice.value=this.value">
-                        
+                        <label for="customRange2" class="form-label"
+                          >Prix</label
+                        >
+                        <input
+                          type="range"
+                          class="form-range w-100"
+                          min="{{minMaxPrice.product_price__min}}"
+                          max="{{minMaxPrice.product_price__max}}"
+                          id="rangeInput"
+                          oninput="maxPrice.value=this.value"
+                        />
                       </li>
                       <li class="list-group-item">
-                        Max: <input type="number" value="{{minMaxPrice.product_price__max}}" max={{minMaxPrice.product_price__max}} min={{minMaxPrice.product_price__min}} class="form-control" id="maxPrice" onkeyup="rangeInput.value=this.value" />
-                        <button id="priceFilterBtn" class="btn btn-info btn-sm mt-1">Filter</button>
+                        Max:
+                        <input
+                          type="number"
+                          value="{{minMaxPrice.product_price__max}}"
+                          max="{{minMaxPrice.product_price__max}}"
+                          min="{{minMaxPrice.product_price__min}}"
+                          class="form-control"
+                          id="maxPrice"
+                          onkeyup="rangeInput.value=this.value"
+                        />
+                        <button
+                          id="priceFilterBtn"
+                          class="btn btn-info btn-sm mt-1"
+                        >
+                          Filter
+                        </button>
                       </li>
                     </div>
                   </div>
@@ -313,15 +350,20 @@
                   <h4>Tailles chaussures</h4>
                 </div>
                 <div class="size__list color__list">
-                    <ul>
-                  {% for size in size_shoes %}
-                  <li>  <input type="checkbox" id="{{size.title}}" value="{{size.title}}" class="filter-checkbox" data-filter="size_shoes" />
-                    <label for="{{size.title}}"
-                    >{{size.title}}</label>
-              
+                  <ul>
+                    {% for size in size_shoes %}
+                    <li>
+                      <input
+                        type="checkbox"
+                        id="{{size.title}}"
+                        value="{{size.title}}"
+                        class="filter-checkbox"
+                        data-filter="size_shoes"
+                      />
+                      <label for="{{size.title}}">{{size.title}}</label>
                     </li>
-                  
-                  {% endfor %}
+
+                    {% endfor %}
                   </ul>
                 </div>
               </div>
@@ -332,7 +374,6 @@
               {% include './ajax-product-list.html' %}
             </div>
           </div>
- 
         </div>
       </div>
     </section>

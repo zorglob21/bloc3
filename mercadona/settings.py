@@ -37,7 +37,7 @@ SECRET_KEY = env('SECRET_KEY')
 #By setting DEBUG to FALSE, the settings will be automatically configured for production environment
 #by setting DEBUG to TRUE, the settings will be automatically configured for development environment
 DEBUG = False
-ALLOWED_HOSTS = []
+
 WSGI_APPLICATION = 'mercadona.wsgi.application'
 
 
@@ -112,7 +112,7 @@ elif DEBUG == False:
         'default':dj_database_url.parse(env('DATABASE_URL'))
     }
 
-    ALLOWED_HOSTS = ['yannn-bloc3.onrender.com']
+    ALLOWED_HOSTS = ['*']
 
     INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',

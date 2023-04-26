@@ -3,7 +3,7 @@ from django.utils.html import mark_safe
 from datetime import date
 from appli.models import Category, SizeStandard, SizeShoe, SizePant, Gender, Product
 from django.core.files.uploadedfile import SimpleUploadedFile
-
+from decimal import Decimal
 
 class ModelTests(TestCase):
 
@@ -20,16 +20,21 @@ class ModelTests(TestCase):
             content_type='image/jpeg'
         )
 
+        product_price = 10.00
+        product_promotion_percentage = 20
+        product_promotion_price = Decimal(product_price) - Decimal(product_price) * (Decimal(str(product_promotion_percentage)) / 100)
+
         self.product = Product.objects.create(
             product_name="Test Product",
-            product_price=10.00,
+            product_price=product_price,
             product_category=self.category,
             product_gender=self.gender,
             product_description="Test product description",
-            product_promotion_percentage=20,
+            product_promotion_percentage=product_promotion_percentage,
             product_promotion_start_date=date(2023, 1, 1),
             product_promotion_end_date=date(2023, 12, 31),
-            product_picture=self.image
+            product_picture=self.image,
+            product_promotion_price=product_promotion_price
         )
 
     def test_category_model(self):
@@ -58,7 +63,7 @@ class ModelTests(TestCase):
         self.assertEqual(product.image_tag(), mark_safe('<img src="%s" width="50" height="50"/>' % (product.product_picture.url)))
         self.assertEqual(product.is_discount(), True)
         discounted_price = product.product_price - product.product_price * product.product_promotion_percentage / 100
-        self.assertEqual(product.promotion_price, discounted_price)
+        self.assertEqual(product.product_promotion_price, discounted_price)
         # Test image_tag() method
         self.assertEqual(
             product.image_tag(),
@@ -73,8 +78,3 @@ class ModelTests(TestCase):
         product.product_promotion_end_date = date(2023, 4, 23)
         product.save()
         self.assertFalse(product.is_discount())
-
-        # Test promotion_price property calculation
-        product.product_promotion_percentage = 50.00
-        product.save()
-        self.assertEqual(product.promotion_price, 5.00)

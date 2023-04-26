@@ -78,10 +78,5 @@ class Product(models.Model):
             return False
     
     
-    
-    @property
-    def promotion_price(self):
-        discounted_price = self.product_price - self.product_price* (Decimal(str(self.product_promotion_percentage))/100)
-        return discounted_price
 
  
