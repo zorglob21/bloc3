@@ -57,7 +57,7 @@ if DEBUG == True:
     }
     ALLOWED_HOSTS = []
 
-        #SECURE_SSL_REDIRECT= True
+    
 
     # Application definition
 
@@ -111,9 +111,10 @@ elif DEBUG == False:
     DATABASES = {
         'default':dj_database_url.parse(env('DATABASE_URL'))
     }
-
-    ALLOWED_HOSTS = ['*']
-
+    
+    #those settings need to be changed if the application is running on locally simulated production environment
+    ALLOWED_HOSTS = ['yannn-bloc3.onrender.com']
+    SECURE_SSL_REDIRECT = True
     INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'appli.apps.AppliConfig',
@@ -146,6 +147,7 @@ elif DEBUG == False:
         'whitenoise.middleware.WhiteNoiseMiddleware',
     ]
     ROOT_URLCONF = 'mercadona.urls'
+  
     TEMPLATES = [
         {
             'BACKEND': 'django.template.backends.django.DjangoTemplates',
