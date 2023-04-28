@@ -113,7 +113,8 @@ elif DEBUG == False:
 
     #those settings need to be changed if the application is running on locally simulated production environment
     ALLOWED_HOSTS = ['yannn-bloc3.onrender.com']
- 
+    SECURE_SSL_REDIRECT= True
+    
     INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'appli.apps.AppliConfig',
