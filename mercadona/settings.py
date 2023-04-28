@@ -112,7 +112,7 @@ elif DEBUG == False:
     }
 
     #those settings need to be changed if the application is running on locally simulated production environment
-    ALLOWED_HOSTS = ['*']
+    ALLOWED_HOSTS = ['yannn-bloc3.onrender.com']
  
     INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
